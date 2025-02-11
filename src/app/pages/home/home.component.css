@@ -1,0 +1,89 @@
+ /* ============================= */
+/* DIÁLOGOS DE PRIMENG - MODALES */
+/* ============================= */
+
+  p-dialog .p-dialog {
+    border-radius: 12px; /* Bordes más suaves */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+    animation: fadeIn 0.3s ease-out;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+}
+
+/* ✨ Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🎨 Encabezado con diseño moderno */
+p-dialog .p-dialog-titlebar {
+    background: linear-gradient(135deg,  #229954,  #145a32);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botón de cierre más estético */
+p-dialog .p-dialog-titlebar .p-dialog-titlebar-close {
+    color: #fff;
+    font-size: 18px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+p-dialog .p-dialog-titlebar .p-dialog-titlebar-close:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* 📜 Contenido con fondo blanco puro y más espaciamiento */
+p-dialog .p-dialog-content {
+    background-color: #fff !important;
+    font-size: 17px;
+    color: #333;
+    padding: 25px;
+    line-height: 1.6;
+}
+
+/* 📌 Footer con diseño limpio y botones estilizados */
+p-dialog .p-dialog-footer {
+    background-color: #fff !important;
+    padding: 15px 25px;
+    text-align: right;
+    border-top: 2px solid #e0e0e0;
+}
+
+/* 🔘 Botones del footer mejorados */
+p-dialog .p-dialog-footer .p-button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover en los botones */
+p-dialog .p-dialog-footer .p-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔴 Botón de cancelar con color más sutil */
+p-dialog .p-dialog-footer .p-button-secondary {
+    background: #e74c3c !important;
+    border: none;
+    color: white !important;
+}
+p-dialog .p-dialog-footer .p-button-secondary:hover {
+    background: #c0392b !important;
+}

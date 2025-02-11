@@ -1,0 +1,28 @@
+<!-- src/app/components/navbar/navbar.component.html -->
+<nav class="navbar">
+    <div class="logo" (click)="navigateTo('/')" style="cursor: pointer;">
+      <img src="https://st.mextudia.com/wp-content/uploads/2022/07/UNPA_logo.jpg" 
+           alt="Logo Universidad del Papalopan" class="logo-img">
+      <h2>Universidad del Papalopan</h2>
+    </div>
+  
+    <div class="navbar-links">
+        <a (click)="navigateTo('/')">
+            <i class="fa-solid fa-house"></i>
+            <span class="link-text">Inicio</span>
+          </a>
+        <a (click)="navigateTo('/calculadora')">
+          <i class="fa-solid fa-calculator"></i>
+          <span class="link-text">Calculadora</span>
+        </a>
+       <!-- <a (click)="navigateTo('/sobre-nosotros')">
+          <i class="fa-solid fa-users"></i>
+          <span class="link-text">Sobre Nosotros</span>
+        </a>
+        -->
+        <a (click)="navigateTo('/ayuda')">
+          <i class="fa-solid fa-circle-info"></i>
+          <span class="link-text">Información Adicional</span>
+        </a>
+    </div>
+</nav>

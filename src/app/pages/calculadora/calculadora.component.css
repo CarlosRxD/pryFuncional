@@ -1,0 +1,153 @@
+/* Estilos para el componente OTP (por ejemplo, si usas p-inputotp) */
+p-inputotp {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Si el componente genera un contenedor con clases (por ejemplo, usamos el contenedor card para centrar)
+     nos aseguramos de que se aplique flexbox para centrar los inputs */
+  .card.flex.justify-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;  /* Espacio entre cada input */
+  }
+  
+  /* Estilos para cada input generado por p-inputotp */
+  p-inputotp input {
+    width: 50px;            /* Ancho de cada casilla */
+    height: 50px;           /* Alto para una buena visibilidad */
+    border: 2px solid var(--primary-color); /* Utiliza el color primario definido en tus variables */
+    border-radius: 4px;     /* Bordes ligeramente redondeados */
+    font-size: 20px;        /* Tamaño de fuente legible */
+    text-align: center;     /* Centra el contenido (número) en cada input */
+    margin-right: 10px;     /* Espaciado entre inputs */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Efecto de foco en cada input para resaltar la selección */
+  p-inputotp input:focus {
+    border-color: var(--primary-dark);  /* Cambia al color primario oscuro al hacer foco */
+  }
+  
+  /* Opcional: Eliminar el margen derecho en el último input */
+  /* p-inputotp input:last-child {
+    margin-right: 0;
+  } */
+  
+  /* Contenedor principal de la calculadora */
+  .container.form-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ 
+  }
+  
+  /* Título */
+  .container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Nav Tabs */
+  .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+  }
+  
+  .nav-tabs .nav-item {
+    margin-bottom: -1px;
+  }
+  
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px 20px;
+    color: #555;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    background-color: #e9ecef;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #333;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 transparent;
+    font-weight: bold;
+  }
+  
+  /* Tab Content: Oculta por defecto los contenidos de cada pestaña */
+  .tab-content .tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Solo se muestra la pestaña activa */
+  .tab-content .tab-pane.active {
+    display: block;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Botón personalizado */
+  .btn-custom {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Spinner de carga */
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  /* Resultados */
+  .result h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .alert {
+    margin-bottom: 20px;
+  }
+  
+  /* Chart container */
+  .chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive: Ajustes para pantallas pequeñas */
+  @media (max-width: 576px) {
+    .nav-tabs .nav-link {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    .btn-custom {
+      width: 100%;
+    }
+  }

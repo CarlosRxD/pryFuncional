@@ -1,0 +1,27 @@
+/* Aseguramos que cada enlace se muestre como un elemento inline-flex */
+.navbar-links{
+    margin-right: 5%;
+}
+.navbar-links a {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Estilo inicial para el texto: oculto y sin espacio */
+  .navbar-links a .link-text {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-left: 0;
+    transition: max-width 0.4s ease, opacity 0.4s ease, margin-left 0.4s ease;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  /* Al hacer hover sobre el enlace, se expande el span para mostrar el texto */
+  .navbar-links a:hover .link-text {
+    max-width: 200px;  /* Ajusta este valor según la longitud del texto */
+    opacity: 1;
+    margin-left: 8px;  /* Espacio entre el icono y el texto */
+  }
+  

@@ -1,0 +1,215 @@
+<div class="container my-5 form-section">
+    <h2 class="text-center">Calculadora de Estadística</h2>
+    <!-- Pestañas -->
+    <ul class="nav nav-tabs justify-content-center mb-4">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="selectedTab === 'descriptivas'"
+          (click)="selectedTab = 'descriptivas'"
+        >
+          Medidas Descriptivas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="selectedTab === 'asociativas'"
+          (click)="selectedTab = 'asociativas'"
+        >
+          Medidas Asociativas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="selectedTab === 'conteo'"
+          (click)="selectedTab = 'conteo'"
+        >
+          Técnicas de Conteo
+        </a>
+      </li>
+    </ul>
+  
+    <!-- Contenido de las pestañas -->
+    <div class="tab-content">
+      <!-- Medidas Descriptivas -->
+      <div class="tab-pane" [class.active]="selectedTab === 'descriptivas'">
+        <form (ngSubmit)="calculate()">
+          <!-- Entrada manual -->
+          <div class="mb-3">
+            <label for="dataInput" class="form-label">Datos (separados por comas):</label>
+            <input
+              type="text"
+              id="dataInput"
+              class="form-control"
+              [(ngModel)]="dataInput"
+              name="dataInput"
+              placeholder="Ej: 80, 90, 70, 85"
+              required
+            />
+          </div>
+          <!-- Selección de operación -->
+          <div class="mb-3">
+            <label for="operationDescriptivas" class="form-label">Operación:</label>
+            <select
+              id="operationDescriptivas"
+              class="form-select"
+              [(ngModel)]="operation"
+              name="operation"
+              required
+            >
+              <option value="mean">Media</option>
+              <option value="median">Mediana</option>
+              <option value="mode">Moda</option>
+              <option value="variance">Varianza</option>
+              <option value="stddev">Desviación Estándar</option>
+            </select>
+          </div>
+          <!-- Subida de archivo CSV -->
+          <div class="mb-3">
+            <label for="csvInputDescriptivas" class="form-label">
+              O sube un archivo CSV:
+            </label>
+            <input
+              type="file"
+              id="csvInputDescriptivas"
+              class="form-control"
+              accept=".csv"
+              (change)="handleCsvUploadDescriptivas($event)"
+            />
+          </div>
+          <button type="submit" class="btn-custom">Calcular</button>
+        </form>
+      </div>
+  
+      <!-- Medidas Asociativas -->
+      <div class="tab-pane" [class.active]="selectedTab === 'asociativas'">
+        <form (ngSubmit)="calculate()">
+          <!-- Entradas manuales para X e Y -->
+          <div class="mb-3">
+            <label for="dataInputX" class="form-label">Datos X (separados por comas):</label>
+            <input
+              type="text"
+              id="dataInputX"
+              class="form-control"
+              [(ngModel)]="dataInputX"
+              name="dataInputX"
+              placeholder="Ej: 1, 2, 3, 4"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="dataInputY" class="form-label">Datos Y (separados por comas):</label>
+            <input
+              type="text"
+              id="dataInputY"
+              class="form-control"
+              [(ngModel)]="dataInputY"
+              name="dataInputY"
+              placeholder="Ej: 5, 6, 7, 8"
+              required
+            />
+          </div>
+          <!-- Selección de operación -->
+          <div class="mb-3">
+            <label for="operationAsociativas" class="form-label">Operación:</label>
+            <select
+              id="operationAsociativas"
+              class="form-select"
+              [(ngModel)]="operation"
+              name="operation"
+              required
+            >
+              <option value="covariance">Covarianza</option>
+              <option value="correlation">Correlación</option>
+              <option value="corrcoef">Coeficiente de Correlación</option>
+            </select>
+          </div>
+          <!-- Subida de archivo CSV para dos columnas -->
+          <div class="mb-3">
+            <label for="csvInputAsociativas" class="form-label">
+              O sube un archivo CSV (con dos columnas):
+            </label>
+            <input
+              type="file"
+              id="csvInputAsociativas"
+              class="form-control"
+              accept=".csv"
+              (change)="handleCsvUploadAsociativas($event)"
+            />
+          </div>
+          <button type="submit" class="btn-custom">Calcular</button>
+        </form>
+      </div>
+  
+      <!-- Técnicas de Conteo -->
+      <div class="tab-pane" [class.active]="selectedTab === 'conteo'">
+        <form (ngSubmit)="calculate()">
+          <div class="mb-3">
+            <label for="nValue" class="form-label">Valor de n:</label>
+            <input
+              type="number"
+              id="nValue"
+              class="form-control"
+              [(ngModel)]="nValue"
+              name="nValue"
+              placeholder="Ej: 10"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="rValue" class="form-label">Valor de r:</label>
+            <input
+              type="number"
+              id="rValue"
+              class="form-control"
+              [(ngModel)]="rValue"
+              name="rValue"
+              placeholder="Ej: 3"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="operationConteo" class="form-label">Operación:</label>
+            <select
+              id="operationConteo"
+              class="form-select"
+              [(ngModel)]="operation"
+              name="operation"
+              required
+            >
+              <option value="permutation">Permutaciones</option>
+              <option value="combination">Combinaciones</option>
+            </select>
+          </div>
+          <!-- Para conteo no se incluye CSV ya que se usan dos números -->
+          <button type="submit" class="btn-custom">Calcular</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Spinner de carga -->
+  <div *ngIf="loading" class="text-center my-3">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+  
+  <!-- Resultados -->
+  <div *ngIf="errorMessage || result" class="result my-5 text-center">
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="result">
+      <h1>Resultados:</h1>
+      <h4>{{ formatResult() }}</h4>
+    </div>
+  </div>
+  
+  <!-- Gráficos (si aplica) -->
+  <div id="chartContainer" *ngIf="chartData" class="chart-container my-5">
+    <canvas id="resultChart" width="400" height="200"></canvas>
+  </div>
+  

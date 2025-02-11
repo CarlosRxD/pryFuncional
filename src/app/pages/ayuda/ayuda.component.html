@@ -1,0 +1,98 @@
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Ingenieros con un Enfoque Diferente</h2>
+        <p>Nuestro objetivo es hacer que conceptos complejos sean más fáciles de entender y aplicar, tanto para estudiantes como para profesionales. Con nuestro enfoque interactivo y personalizado, podrás resolver problemas paso a paso y ganar confianza en el uso de estas poderosas herramientas matemáticas.".</p>
+        <button class="btn">Contáctanos</button>
+    </div>
+    <div class="hero-img">
+        <img src="https://th.bing.com/th/id/R.798325578ff5f3ba8e647dc2e5c30f3a?rik=HLKdXkEzCyDhXA&riu=http%3a%2f%2f3.bp.blogspot.com%2f-na7ziVujNf0%2fVzyZYpimVGI%2fAAAAAAAAAF0%2fPkdLT3dyvJQxFHswijKPSoQDPoUq1NWnACK4B%2fs1600%2fshutterstock_216867628.jpg&ehk=DWANyryKPalRkjn9qkvd9Qy9mYDfMJTZQCxYkj5Hr8Q%3d&risl=&pid=ImgRaw&r=0" alt="Arquitectura moderna">
+    </div>
+</section>
+
+<section class="servicios">
+    <h3>Brindamos Información Adicional</h3>
+    <div class="servicios-container">
+        <div class="servicio">
+            <h4>Medias Descriptivas</h4>
+            <p>Son herramientas estadísticas que se utilizan para resumir o describir un conjunto de datos de manera simple.</p>
+            <img src="https://cdn.goconqr.com/uploads/media/image/39038701/desktop_ec750e3d-2fda-475e-b53c-d380ba1a6893.png" alt="Imagen 1" class="servicio-img">
+            <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoMediasDescriptivas)">Ver Código</button>
+
+        </div>
+        <div class="servicio">
+            <h4>Medidas Asociativas</h4>
+            <p>Son conceptos que se utilizan para describir cómo los números o elementos de un conjunto pueden relacionarse o combinarse entre sí de una manera consistente.</p>
+            <img src="https://th.bing.com/th/id/R.a20a8e8ac0af8eaedad2c715fd30a97e?rik=uuPp%2f%2bf1lG5Y2w&riu=http%3a%2f%2frprincipiantes.boscomendoza.com%2fr-principiantes_files%2ffigure-html%2fhist_color-1.png&ehk=QyhIXTN9WpNl2rR4pdy1L7CAXlTbgN2N3vYzKA%2fIb5E%3d&risl=&pid=ImgRaw&r=0" alt="Imagen 2" class="servicio-img">
+            <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoMedidasAsociativas)">Ver Código</button>
+
+        </div>
+        <div class="servicio">
+            <h4>Técnicas De Conteo</h4>
+            <p>Son métodos matemáticos que se utilizan para contar, enumerar o calcular el número de posibles formas en que pueden ocurrir ciertos eventos o formar conjuntos en problemas de combinatoria.</p>
+            <img src="https://escuelaparticulararrayan.cl/wp-content/uploads/2023/04/conjuntos-y-tecnicas-de-conteo-claves-para-una-comprension-profunda-de-la-matematica-1024x576.jpg" alt="Imagen 3" class="servicio-img">
+            <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoTecnicasConteo)">Ver Código</button>
+
+        </div>
+    </div>
+</section>
+<div *ngIf="codigoSeleccionado" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="codigoSeleccionado = null">&times;</span>
+      <pre><code>{{ codigoSeleccionado }}</code></pre>
+    </div>
+  </div>
+<!-- Proyectos -->
+<section class="proyectos">
+    <h3>Conceptos Básicos Que Debes De Saber</h3>
+    <div class="proyectos-container">
+        <div class="proyecto">
+            <div class="proyecto-contenido">
+                <img src="https://th.bing.com/th/id/OIP.6ooTkVHB0YotkSFB59HHzwHaDs?rs=1&pid=ImgDetMain" class="proyecto-img">
+                <div class="proyecto-info">
+                    <h4>Desviación Estándar</h4>
+                    <p>
+                        La <span class="highlight">desviación estándar</span> es una medida estadística que indica el grado de dispersión o variabilidad de un conjunto de datos en relación con su media (promedio).
+                        Un valor bajo de desviación estándar indica que los datos están más cerca de la media, mientras que un valor alto indica mayor dispersión.
+                    </p>
+                    <!-- Botón "Ver código" -->
+                    <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoEstadisticaDescriptiva)">Ver Código</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <div class="proyecto-contenido">
+                <img src="https://elprofe.online/mates/imagenes/sociales/distribuciones-bidimensionales-2.png" class="proyecto-img">
+                <div class="proyecto-info">
+                    <h4>Covarianza y Correlación</h4>
+                    <p>
+                        La <span class="highlight">covarianza</span> es una medida estadística que indica la dirección de la relación entre dos variables. Si la covarianza es positiva, las dos variables tienden a aumentar o disminuir juntas.
+                        Si es negativa, una variable aumenta mientras que la otra disminuye.
+                        Por otro lado, la <span class="highlight">correlación</span> es una medida estadística que describe la fuerza y la dirección de la relación lineal entre dos variables. A diferencia de la covarianza, la correlación tiene un rango de -1 a 1.
+                    </p>
+                    <!-- Botón "Ver código" -->
+                    <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoCovarianza)">Ver Código</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <div class="proyecto-contenido">
+                <img src="https://solonumeros.win/wp-content/uploads/2020/11/permutaciones.jpg" class="proyecto-img">
+                <div class="proyecto-info">
+                    <h4>Combinación y Permutación</h4>
+                    <p>
+                        La <span class="combinacion">combinación</span> se refiere a la selección de elementos de un conjunto sin importar el orden. Es útil cuando lo importante es el grupo de elementos elegido, no el orden.
+                        En cambio, la <span class="permutacion">permutación</span> se refiere a la organización de los elementos de un conjunto en un orden específico. Aquí, el orden de los elementos sí es importante, por lo que se cuentan todas las posibles disposiciones.
+                    </p>
+                    <!-- Botón "Ver código" -->
+                    <button class="btn-ver-codigo" (click)="mostrarCodigo(codigoCombinatoria)">Ver Código</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,335 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+/* Icono al lado del texto de logo */
+.icono {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Estilo de los botones Ver Código */
+.btn-ver-codigo {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;              /* Color del texto del botón (blanco) */
+    padding: 10px 20px;        /* Espaciado interno del botón: 10px en la parte superior e inferior y 20px en los lados */
+    font-size: 16px;           /* Tamaño de la fuente del texto del botón */
+    border: none;              /* Sin borde alrededor del botón */
+    border-radius: 5px;        /* Bordes redondeados */
+    cursor: pointer;          /* Muestra el cursor como un puntero cuando el mouse pasa sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y el efecto de transformación */
+    margin-top: 10px;          /* Espacio de 10px por encima del botón */
+   
+    position: absolute;        /* Posiciona el botón de forma absoluta en relación a su contenedor */
+    bottom: 10px;              /* Coloca el botón a 10px desde la parte inferior del contenedor */
+    right: 10px;               /* Coloca el botón a 10px desde el lado derecho del contenedor */
+}
+
+
+
+.btn-ver-codigo:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Estilo para el header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Otros estilos ya definidos en el código */
+
+/* Header */
+.header {
+    background-color: #1b4332;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h2 {
+    font-family: 'Georgia', serif;
+      font-weight: normal;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #FF5722
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2d6a4f;
+    color: white;
+    padding: 60px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-family: 'Arial', sans-serif; /* Fuente para el texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+}
+
+
+/* Contenedor del texto */
+.hero-content {
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Botón */
+.btn {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+/* Imagen en el hero */
+.hero-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+/* Servicios */
+.servicios {
+    text-align: center;
+    padding: 40px;
+}
+
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, border 0.3s ease; /* Animación de transformación y borde */
+    border: 2px solid transparent; /* Borde inicial */
+}
+
+.servicio:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta al pasar el mouse */
+    border-color: #ffcc00; /* Cambia el borde al pasar el mouse */
+}
+
+.servicio-img {
+    width: 100%;
+    max-width: 200px; /* Ajusta el tamaño según lo necesites */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Proyectos */
+.proyectos {
+    text-align: center;
+    background-color: #d8f3dc;
+    padding: 40px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.proyectos-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las imágenes de manera uniforme */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilos generales */
+.proyecto {
+    margin-bottom: 20px;
+    opacity: 0; /* Comienza invisible */
+    animation: slideIn 0.5s forwards; /* Aplica la animación */
+}
+
+.proyecto-contenido {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la imagen y la información */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Animación en hover */
+}
+
+/* Estilo de la imagen */
+.proyecto-img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+/* Contenedor de la información */
+.proyecto-info {
+    flex: 1;
+}
+
+/* Animación para los proyectos */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px); /* Empieza desplazado hacia abajo */
+        opacity: 0; /* Empieza invisible */
+    }
+    to {
+        transform: translateY(0); /* Termina en su posición original */
+        opacity: 1; /* Termina visible */
+    }
+}
+
+/* Estilos de hover para los proyectos */
+.proyecto-contenido:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra más fuerte */
+    border: 2px solid #ffcc00; /* Borde amarillo al pasar el mouse */
+}
+
+/* Estilo de los títulos */
+.proyecto-info h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo de los párrafos */
+.proyecto-info p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Resaltar los conceptos clave */
+.highlight {
+    background-color: #fffbcc;
+    color: #e65100;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.combinacion {
+    background-color: #ffecb3;
+    color: #ff5722;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.permutacion {
+    background-color: #b3e5fc;
+    color: #039be5;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.modal-code {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  
+  /* Opcional: estilos para los botones "Ver Código" */
+  .btn-ver-codigo {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-ver-codigo:hover {
+    background-color: #0056b3;
+  }
+  .modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 90%;
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }

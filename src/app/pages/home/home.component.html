@@ -1,0 +1,102 @@
+<div class="content">
+    <div class="hero">
+      <h1>Bienvenido a Nuestra Página</h1>
+      <p>Explora las herramientas y recursos que tenemos para ti.</p>
+      <button class="hero-button" (click)="openCalculadora()">Ir a la Calculadora</button>
+    </div>
+  
+    <div class="card-container">
+      <!-- Card: Probabilidad y Estadística -->
+      <div class="card-custom">
+        <h3>Probabilidad y Estadística</h3>
+        <p><strong>Probabilidad:</strong> La probabilidad es la medida de la posibilidad de que ocurra un evento dentro de un conjunto de posibilidades.</p>
+        <p><strong>Estadística:</strong> La estadística es el estudio de cómo recolectar, analizar e interpretar datos para obtener conclusiones sobre una población.</p>
+        <button class="btn-custom" (click)="openProbabilidadDialog()">Te enseñamos cómo funciona</button>
+      </div>
+  
+      <!-- Card: Ejemplos de Fórmulas -->
+      <div class="card-custom">
+        <h3>Ejemplos De Algunas Fórmulas</h3>
+        <p><strong>Fórmulas de probabilidad:</strong></p>
+        <p>P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</p>
+        <p>P(A ∩ B) = P(A) ⋅ P(B | A)</p>
+        <p><strong>Fórmulas estadísticas:</strong></p>
+        <p><strong>Media:</strong> μ = (1/N) ∑(i=1 to N) xi</p>
+        <p><strong>Desviación estándar:</strong> σ = (1/N) ∑(i=1 to N) (xi - μ)²</p>
+        <button class="btn-custom" (click)="openFormulasDialog()">Leer Más</button>
+      </div>
+  
+      <!-- Card: Aplicaciones en la Vida Real -->
+      <div class="card-custom">
+        <h3>Aplicaciones En La Vida Real</h3>
+        <ul>
+          <li><strong>Economía:</strong> Modelos de riesgo, toma de decisiones bajo incertidumbre.</li>
+          <li><strong>Medicina:</strong> Análisis de ensayos clínicos, pruebas de diagnóstico.</li>
+          <li><strong>Deportes:</strong> Análisis de desempeño, probabilidades de ganar.</li>
+          <li><strong>Investigación científica:</strong> Diseño de experimentos, análisis de datos.</li>
+        </ul>
+        <button class="btn-custom" (click)="openAplicacionesDialog()">Más Información</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Diálogo: Probabilidad y Estadística -->
+  <p-dialog header="Probabilidad y Estadística" [(visible)]="displayProbabilidadDialog" modal="true" [style]="{width: '600px'}">
+    <div class="modal-content">
+      <p>En esta sección se explica en detalle qué es la probabilidad y la estadística.</p>
+      <p><strong>Pasos para entenderlo:</strong></p>
+      <ol>
+        <li><strong>Definición:</strong> Se explica el concepto básico de probabilidad.</li>
+        <li><strong>Cálculos Básicos:</strong> Se muestran ejemplos de cálculo de probabilidades.</li>
+        <li><strong>Ejemplo Práctico:</strong>  
+            Paso a paso: Calcular la probabilidad de sacar una carta de un mazo.
+        </li>
+        <li><strong>Conclusión:</strong> Resumen de los conceptos aprendidos.</li>
+      </ol>
+    </div>
+    <p-footer>
+        <button class="btn-custom" type="button" pButton icon="pi pi-times" label="Cerrar" (click)="displayProbabilidadDialog=false"></button>
+    </p-footer>
+  </p-dialog>
+  
+  <!-- Diálogo: Ejemplos De Fórmulas -->
+  <p-dialog header="Ejemplos De Fórmulas" [(visible)]="displayFormulasDialog" modal="true" [style]="{width: '600px'}">
+    <div class="modal-content">
+      <p>Aquí se explican las fórmulas de probabilidad y estadística de forma detallada.</p>
+      <p><strong>Pasos para entender las fórmulas:</strong></p>
+      <ol>
+        <li><strong>Fórmula de la Unión:</strong> P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</li>
+        <li><strong>Fórmula de la Intersección:</strong> P(A ∩ B) = P(A) ⋅ P(B | A)</li>
+        <li><strong>Ejemplo Detallado:</strong>  
+            Paso a paso: Se ilustra con un ejemplo numérico.
+        </li>
+        <li><strong>Fórmulas Estadísticas:</strong>
+            <ul>
+                <li>Media: μ = (1/N) ∑(i=1 to N) xi</li>
+                <li>Desviación estándar: σ = (1/N) ∑(i=1 to N) (xi - μ)²</li>
+            </ul>
+        </li>
+      </ol>
+    </div>
+    <p-footer>
+        <button class="btn-custom" type="button" pButton icon="pi pi-times" label="Cerrar" (click)="displayFormulasDialog=false"></button>
+    </p-footer>
+  </p-dialog>
+  
+  <!-- Diálogo: Aplicaciones En La Vida Real -->
+  <p-dialog header="Aplicaciones En La Vida Real" [(visible)]="displayAplicacionesDialog" modal="true" [style]="{width: '600px'}">
+    <div class="modal-content">
+      <p>En este apartado se muestran ejemplos de cómo se aplican los conceptos en la vida real.</p>
+      <p><strong>Ejemplos y Animaciones:</strong></p>
+      <ol>
+        <li><strong>Economía:</strong> Explicación y animación sobre modelos de riesgo y toma de decisiones.</li>
+        <li><strong>Medicina:</strong> Ejemplo: Análisis de ensayos clínicos y pruebas de diagnóstico.</li>
+        <li><strong>Deportes:</strong> Animación que ilustra el análisis de desempeño.</li>
+        <li><strong>Investigación científica:</strong> Demostración paso a paso de un experimento y análisis de datos.</li>
+      </ol>
+    </div>
+    <p-footer>
+        <button class="btn-custom" type="button" pButton icon="pi pi-times" label="Cerrar" (click)="displayAplicacionesDialog=false"></button>
+    </p-footer>
+  </p-dialog>
+  
